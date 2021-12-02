@@ -5,15 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 13:30:37 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/11/29 13:33:09 by ade-la-c         ###   ########.fr       */
+/*   Created: 2021/11/30 15:31:42 by ade-la-c          #+#    #+#             */
+/*   Updated: 2021/12/02 02:29:35 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int	main( void ) {
-	char	buf[512];
-	std::cout << "Hello World" << std::endl;
+
+	PhoneBook		phonebook;
+
+	// phonebook.setIndex(0);
+	phonebook.waitInput();
 	return 0;
 }

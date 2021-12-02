@@ -5,18 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/29 13:41:41 by ade-la-c          #+#    #+#              #
-#    Updated: 2021/11/30 15:28:54 by ade-la-c         ###   ########.fr        #
+#    Created: 2021/11/29 16:16:39 by ade-la-c          #+#    #+#              #
+#    Updated: 2021/12/02 02:55:58 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= megaphone
+NAME			= phonebook
 
-SRCS			= megaphone.cpp
+SRCS			= main.cpp			\
+				PhoneBook.cpp		\
+				Contact.cpp			\
 
 OBJS			= ${SRCS:.cpp=.o}
 
-CXXFLAGS		= -Wall -Werror -Wextra -std=c++98 -I .
+CXXFLAGS		= -Wall -Werror -Wextra -std=c++98 -I . -g -fsanitize=address
 
 RM				= rm -f
 
@@ -26,7 +28,6 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
 clean:			
 				$(RM) $(OBJS)
 
