@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:30:59 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/02 03:07:35 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/12/04 19:02:51 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <iostream>
 # include <sstream>
+# include <string>
 # include <iomanip>
-
 
 class PhoneBook {
 
@@ -31,13 +31,13 @@ public:
 	void			wrongInput( void );
 
 	void			addContact( void );
-	void			searchContact( void );
-	int				setIndex( int x );
+	void			searchContact( void ) const ;
+	int				displayContact( void ) const;
 
 private:
 
 	Contact			_contact[8];
-	char			_index;
+	int				_index;
 
 };
 

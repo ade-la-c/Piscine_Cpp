@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:51:20 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/01 15:23:34 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:50:19 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ public:
 	Contact( void );
 	~Contact( void );
 
-	std::string		getFirstName( void ) const;
-	std::string		getLastName( void ) const;
-	std::string		getNickName( void ) const;
+	std::string		getFirstName( bool x ) const;
+	std::string		getLastName( bool x ) const;
+	std::string		getNickName( bool x ) const;
 	std::string		getPhoneNumber( void ) const;
 	std::string		getDarkestSecret( void ) const;
 
