@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:51:20 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/04 16:50:19 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:16:58 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 
 class	Contact {
+
 
 public:
 
@@ -33,6 +34,7 @@ public:
 	int				setNickName( std::string str );
 	int				setPhoneNumber( std::string str );
 	int				setDarkestSecret( std::string str );
+
 
 private:
 

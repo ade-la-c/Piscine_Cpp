@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:31:03 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/04 22:18:35 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:29:23 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,15 @@ int		PhoneBook::waitInput( void ) {
 		else if (!input.compare("EXIT"))
 			return 1;
 		else
-			this->wrongInput();
+			std::cout << "Wrong Input" << std::endl;
 	}
 	return 0;
-}
-
-void	PhoneBook::wrongInput( void ) {
-
-	std::cout << "Wrong Input" << std::endl;
 }
 
 void	PhoneBook::addContact( void ) {
 
 	std::string		input;
-	Contact			cont;
+	// Contact			cont;
 
 	if (this->_index == 8) {
 		std::cout << "You can't have more than 8 contacts" << std::endl;
