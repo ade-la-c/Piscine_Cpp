@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 15:30:59 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/07 12:59:09 by ade-la-c         ###   ########.fr       */
+/*   Created: 2021/12/08 13:37:22 by ade-la-c          #+#    #+#             */
+/*   Updated: 2021/12/10 18:02:23 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#ifndef HUMANB_H
+# define HUMANB_H
 
-# include "Contact.hpp"
-# include <unistd.h>
 # include <iostream>
-# include <sstream>
-# include <string>
-# include <iomanip>
+# include "Weapon.hpp"
 
-class PhoneBook {
+class	HumanB {
 
 
 public:
 
-	PhoneBook( void );
-	~PhoneBook( void );
+	HumanB( std::string name );
+	~HumanB( void );
 
-	int				waitInput( void );
+	void	setWeapon( Weapon& weapon );
 
-	void			addContact( void );
-	void			searchContact( void ) const;
-	int				displayContact( void ) const;
+	void	attack( void ) const;
+
+	Weapon*		weapon;
 
 
 private:
 
-	Contact			_contact[8];
-	int				_index;
+	std::string		_name;
 
 };
 
