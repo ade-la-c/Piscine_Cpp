@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 17:24:04 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/18 03:08:08 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:38:59 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ public:
 	~Karen( void );
 
 	void	complain( std::string level );
-	
+
 
 private:
 
-	void	_debug( void );
-	void	_info( void );
-	void	_warning( void );
-	void	_error( void );
+	void	debug( void );
+	void	info( void );
+	void	warning( void );
+	void	error( void );
 
 };
 
