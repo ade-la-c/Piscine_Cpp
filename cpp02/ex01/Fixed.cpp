@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:23:19 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/03 00:32:56 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/03 13:11:23 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ std::ostream &		operator<<( std::ostream & COUT, Fixed const & rhs ) {
 
 int		Fixed::toInt( void ) const {
 
-	return (this->_fixedValue >> this->_nbrBits);
+	return this->_fixedValue >> this->_nbrBits;
 }
 
 float	Fixed::toFloat( void ) const {
 
-	return ((float)this->_fixedValue / (1 << this->_nbrBits));
+	return (float)this->_fixedValue / (1 << this->_nbrBits);
 }
