@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:29:43 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/12/07 00:44:16 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:18:05 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 #include <iostream>
 #include <ctime>
 
+int		Account::_nbAccounts = 0;
+int		Account::_totalAmount = 0;
+int		Account::_totalNbDeposits = 0;
+int		Account::_totalNbWithdrawals = 0;
+
 Account::Account( int initial_deposit ) {
 
+	_nbWithdrawals = 0;
+	_nbDeposits = 0;
 	this->_displayTimestamp();
 	this->_totalAmount += initial_deposit;
 	this->_accountIndex = this->_nbAccounts;
@@ -32,8 +39,7 @@ Account::~Account( void ) {
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed";
-	if (this->_accountIndex < this->_nbAccounts - 1)
-		std::cout << std::endl;
+	std::cout << std::endl;
 }
 
 void	Account::makeDeposit( int deposit ) {
@@ -147,10 +153,3 @@ void	Account::_displayTimestamp( void ) {
 	// std::cout << "[19920104_091532] ";
 }
 
-int		Account::_nbAccounts = 0;
-
-int		Account::_totalAmount = 0;
-
-int		Account::_totalNbDeposits = 0;
-
-int		Account::_totalNbWithdrawals = 0;
