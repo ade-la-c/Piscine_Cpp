@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/06 14:18:19 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/06 23:36:42 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/06 22:48:34 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/07 02:26:31 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ public:
 
 	ClapTrap( void );
 	ClapTrap( std::string name );
+	ClapTrap( std::string name, int hp, int ep, int ad );
 	ClapTrap( ClapTrap const & copy);
 	ClapTrap &	operator=( ClapTrap const & rhs );
 	~ClapTrap( void );
@@ -30,14 +31,15 @@ public:
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amount );
 
-	std::string		getName( void ) const;
-	unsigned int	getHitPoints( void ) const;
-	unsigned int	getEnergyPoints( void ) const;
-	unsigned int	getAttackDamage( void ) const;
+	std::string			getName( void ) const;
+	unsigned int		getHitPoints( void ) const;
+	unsigned int		getEnergyPoints( void ) const;
+	unsigned int		getAttackDamage( void ) const;
 
-	// void	setHitPoints( unsigned int amount );
-	// void	setEnergyPoints( unsigned int amount );
-	// void	setAttackDamage( unsigned int amount );
+	void		setName( std::string name );
+	void		setHitPoints( unsigned int amount );
+	void		setEnergyPoints( unsigned int amount );
+	void		setAttackDamage( unsigned int amount );
 
 
 private:
@@ -49,6 +51,6 @@ private:
 
 };
 
-std::ostream &	operator<<(std::ostream & COUT, ClapTrap const & rhs );
+std::ostream &	operator<<( std::ostream & COUT, ClapTrap const & rhs );
 
 #endif
