@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 22:48:56 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/07 02:40:22 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/07 12:16:47 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,24 @@
 
 int		main( void ) {
 
-	FragTrap
+	FragTrap	Ron("Ron Weasley");
+	operator<<(std::cout, Ron);
 
-	// ScavTrap	Ron("Ronald Weasley");
-	// operator<<(std::cout, Ron);
+	Ron.takeDamage(25);
+	Ron.beRepaired(10);
+	Ron.attack("Random non-ginger wizard");
+	Ron.highFiveGuys();
+	operator<<(std::cout, Ron);
+
+	// ScavTrap	Hagrid("Hagrid");
+	// operator<<(std::cout, Hagrid);
 	// ScavTrap	Lestrange("Bellatrix Lestrange");
 	// operator<<(std::cout, Lestrange);
 
-	// Lestrange.attack("Ronald Weasley");
-	// Ron.takeDamage(Lestrange.getAttackDamage());
-	// Ron.guardGate();
-	// operator<<(std::cout, Ron);
+	// Lestrange.attack("Hagrid");
+	// Hagrid.takeDamage(Lestrange.getAttackDamage());
+	// Hagrid.guardGate();
+	// operator<<(std::cout, Hagrid);
 	// operator<<(std::cout, Lestrange);
 
 

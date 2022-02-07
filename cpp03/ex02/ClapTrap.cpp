@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 22:48:46 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/07 02:11:39 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/07 12:17:35 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ClapTrap::beRepaired( unsigned int amount ) {
 		std::cout << this->getName() << " gets revived and restores ";
 	else
 		std::cout << this->getName() << " drinks a healing potion and restores ";
-	std::cout<< amount << "hit points!" << std::endl;
+	std::cout<< amount << " hit points!" << std::endl;
 
 	this->_energyPoints--;
 	this->_hitPoints += amount;

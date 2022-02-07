@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 02:21:44 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/07 02:42:49 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/07 12:18:03 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,14 @@ FragTrap &	FragTrap::operator=(FragTrap const & rhs ) {
 
 FragTrap::~FragTrap( void ) {
 
-	std::cout << this->getName() << " ScavTrap explodes and there is nothing left";
+	std::cout << this->getName() << " FragTrap explodes and there is nothing left";
 	std::cout << std::endl;
 }
 
+void	FragTrap::highFiveGuys( void ) {
+
+	std::cout << this->getName() << " FragTrap high fives the boys" << std::endl;
+}
 
 std::ostream &	operator<<( std::ostream & COUT, FragTrap const & rhs ) {
 
