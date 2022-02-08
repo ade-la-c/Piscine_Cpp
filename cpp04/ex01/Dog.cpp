@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:14:50 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/07 22:26:04 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 18:17:04 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/07 19:32:49 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal( void ) {
+Dog::Dog( void ) : Animal("Dog") {}
 
-	this->type = "random_animal";
-}
-
-Animal::Animal( std::string type ) : type(type) {}
-
-Animal::Animal( Animal const & copy ) {
+Dog::Dog( Dog const & copy ) {
 
 	*this = copy;
 }
 
-Animal &	Animal::operator=( Animal const & rhs ) {
+Dog &	Dog::operator=( Dog const & rhs ) {
 
 	if (this != &rhs)
 		this->type = rhs.type;
 	return *this;
 }
 
-Animal::~Animal( void ) {}
+Dog::~Dog( void ) {}
 
-void	Animal::makeSound( void ) const {
+void	Dog::makeSound( void ) const {
 
-	std::cout << "* Bruit d'animal random *" << std::endl;
+	std::cout << "Ouaf ouaf je suis le chien tsais" << std::endl;
 }
 
-std::string		Animal::getType( void ) const {
+// std::string		Dog::getType( void ) const {
 
-	return this->type;
-}
+// 	return this->type;
+// }

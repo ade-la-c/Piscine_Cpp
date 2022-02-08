@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 20:10:02 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 01:03:35 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 18:04:29 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/07 20:08:23 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef ANIMAL_H
+# define ANIMAL_H
 
-WrongCat::WrongCat( void ) : WrongAnimal("wrong_cat") {}
+# include <iostream>
 
-WrongCat::WrongCat( WrongCat const & copy ) {
+class	Animal {
 
-	*this = copy;
-}
 
-WrongCat &	WrongCat::operator=( WrongCat const & rhs ) {
+public:
 
-	if (this != &rhs)
-		this->type = rhs.type;
-	return *this;
-}
+	Animal( void );
+	Animal( std::string type );
+	Animal( Animal const & copy );
+	Animal &	operator=( Animal const & rhs );
+	~Animal( void );
 
-WrongCat::~WrongCat( void ) {}
+	virtual void	makeSound( void ) const;
 
-void	WrongCat::makeSound( void ) const {
+	std::string		getType( void ) const;
 
-	std::cout << "wrong Miaou miaou mon reuf" << std::endl;
-}
+
+protected:
+
+	std::string		type;
+
+};
+
+#endif

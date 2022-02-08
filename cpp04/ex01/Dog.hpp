@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 20:10:02 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 01:03:35 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 18:17:25 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/07 20:08:49 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef DOG_H
+# define DOG_H
 
-WrongCat::WrongCat( void ) : WrongAnimal("wrong_cat") {}
+# include "Animal.hpp"
 
-WrongCat::WrongCat( WrongCat const & copy ) {
+class	Dog : public Animal {
 
-	*this = copy;
-}
 
-WrongCat &	WrongCat::operator=( WrongCat const & rhs ) {
+public:
 
-	if (this != &rhs)
-		this->type = rhs.type;
-	return *this;
-}
+	Dog( void );
+	Dog( Dog const & copy );
+	Dog &	operator=( Dog const & rhs );
+	~Dog( void );
 
-WrongCat::~WrongCat( void ) {}
+	void	makeSound( void ) const;
 
-void	WrongCat::makeSound( void ) const {
+};
 
-	std::cout << "wrong Miaou miaou mon reuf" << std::endl;
-}
+#endif
