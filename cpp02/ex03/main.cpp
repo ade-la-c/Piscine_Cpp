@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:04:29 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 14:27:35 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/08 15:53:15 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 17:57:05 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#include "Point.hpp"
 
-# include <iostream>
+int main( void ) {
+	Point a = Point(Fixed(0), Fixed(0));
+	Point b = Point(Fixed(1), Fixed(0));
+	Point c = Point(Fixed(0), Fixed(1));
 
-class	Animal {
-
-
-public:
-
-	Animal( void );
-	Animal( std::string type );
-	Animal( Animal const & copy );
-	Animal &	operator=( Animal const & rhs );
-	virtual ~Animal( void );
-
-	virtual void	makeSound( void ) const;
-
-	std::string		getType( void ) const;
-
-
-protected:
-
-	std::string		type;
-
-};
-
-#endif
+	std::cout << bsp(a, b, c, Point(Fixed(0.3f), Fixed(0.3f))) << std::endl; // dedans
+	std::cout << bsp(a, b, c, Point(Fixed(0.5f), Fixed(0.5f))) << std::endl; // sur le bord
+	std::cout << bsp(a, b, c, Point(Fixed(1), Fixed(1))) << std::endl; // dehors
+}

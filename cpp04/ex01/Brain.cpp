@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:04:29 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 14:27:35 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/08 13:13:13 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 15:14:19 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#include "Brain.hpp"
 
-# include <iostream>
+Brain::Brain( void ) {
 
-class	Animal {
+	std::cout << "Brain constructs itself" << std::endl;
+}
 
+Brain::Brain( Brain const & copy ) {
 
-public:
+	std::cout << "Copy brain constructs itself" << std::endl;
+	*this = copy;
+}
 
-	Animal( void );
-	Animal( std::string type );
-	Animal( Animal const & copy );
-	Animal &	operator=( Animal const & rhs );
-	virtual ~Animal( void );
+Brain &	Brain::operator=( Brain const & rhs ) {
 
-	virtual void	makeSound( void ) const;
+	if (this != &rhs)
+		this->_ideas = rhs._ideas;
+	return *this;
+}
 
-	std::string		getType( void ) const;
+Brain::~Brain( void ) {
 
-
-protected:
-
-	std::string		type;
-
-};
-
-#endif
+	std::cout << "Brain disintegrates" << std::endl;
+}

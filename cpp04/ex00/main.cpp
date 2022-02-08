@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:04:05 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 01:07:59 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/08 13:11:26 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		main( void )
 		meta->makeSound();
 
 	}
+	std::cout << std::endl;
 	{
 		const WrongAnimal* meta2 = new WrongAnimal();
 		const WrongAnimal* k = new WrongCat();

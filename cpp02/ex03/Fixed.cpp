@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:23:45 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 15:41:34 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/08 17:16:48 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,14 @@ Fixed		Fixed::operator-( Fixed const & rhs ) const {
 	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
+Fixed		Fixed::operator-( void ) const {
+
+	return Fixed(-this->toFloat());
+}
+
 Fixed		Fixed::operator*( Fixed const & rhs ) const {
 
-	return Fixed(this->toFloat() * rhs.toFloat());
+	return this->toFloat() * rhs.toFloat();
 }
 
 Fixed		Fixed::operator/( Fixed const & rhs ) const {

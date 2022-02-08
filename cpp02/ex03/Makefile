@@ -5,40 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/07 16:50:08 by ade-la-c          #+#    #+#              #
-#    Updated: 2022/02/08 15:14:51 by ade-la-c         ###   ########.fr        #
+#    Created: 2022/02/08 15:47:51 by ade-la-c          #+#    #+#              #
+#    Updated: 2022/02/08 15:52:25 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				= animal
+NAME			= bsp
 
-SRCS				= main.cpp			\
-					Animal.cpp			\
-					Dog.cpp				\
-					Cat.cpp				\
-					WrongAnimal.cpp		\
-					WrongCat.cpp		\
-					Brain.cpp			\
+SRCS			= main.cpp			\
+				Fixed.cpp			\
+				Point.cpp			\
 
-OBJS				= ${SRCS:.cpp=.o}
+OBJS			= ${SRCS:.cpp=.o}
 
-CXX					= clang++
+CXX				= clang++
 
-CXXFLAGS			= -Wall -Werror -Wextra -std=c++98 -I . #-fsanitize=address
+CXXFLAGS		= -Wall -Werror -Wextra -std=c++98 -I .
 
-RM					= rm -f
+RM				= rm -f
 
-all:				${NAME}
+all:			${NAME}
 
-${NAME}:			${OBJS}
-					${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
+${NAME}:		${OBJS}
+				${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 clean:
-					${RM} ${OBJS}
+				${RM} ${OBJS}
 
-fclean:				clean
-					${RM} ${NAME}
+fclean:			clean
+				${RM} ${NAME}
 
-re:					fclean all
+re:				fclean all
 
-.PHONY:				all clean fclean re
+.PHONY:			all clean fclean re

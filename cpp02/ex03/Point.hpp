@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:04:29 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 14:27:35 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/08 15:53:46 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 17:49:41 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef POINT_H
+# define POINT_H
 
-# include <iostream>
+#include "Fixed.hpp"
 
-class	Animal {
+class	Point {
 
 
 public:
 
-	Animal( void );
-	Animal( std::string type );
-	Animal( Animal const & copy );
-	Animal &	operator=( Animal const & rhs );
-	virtual ~Animal( void );
+	Point( void );
+	Point( const Fixed x, const Fixed y );
+	Point( Point const & copy );
+	~Point( void );
 
-	virtual void	makeSound( void ) const;
+	Point &	operator=( Point const & rhs );
 
-	std::string		getType( void ) const;
+	Fixed const		getX( void ) const;
+	Fixed const		getY( void ) const;
 
 
-protected:
+private:
 
-	std::string		type;
+	Fixed const		_x;
+	Fixed const		_y;
 
 };
+
+bool	bsp( Point const a, Point const b, Point const c, Point const point );
 
 #endif

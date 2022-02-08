@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 20:12:58 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/07 22:36:13 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/08 13:11:49 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ WrongAnimal::~WrongAnimal( void ) {}
 
 void	WrongAnimal::makeSound( void ) const {
 
-	std::cout << "* Bruit d'animal random *" << std::endl;
+	std::cout << "* Bruit de wrong animal random *" << std::endl;
 }
 
 std::string		WrongAnimal::getType( void ) const {
