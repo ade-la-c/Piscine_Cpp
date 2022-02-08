@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/07 20:08:40 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:09:07 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_H
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class	Cat : public Animal {
 
@@ -27,6 +28,10 @@ public:
 
 	void	makeSound( void ) const;
 
+
+private:
+
+	Brain *		_brain;
 };
 
 #endif

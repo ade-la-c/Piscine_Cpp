@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:14:50 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 14:38:32 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:18:37 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal( void ) {
 
 Animal::Animal( std::string type ) : type(type) {
 
-	std::cout << "Animal " << type << " has been created" << std::endl;
+	std::cout << "Animal (" << type << ") has been created" << std::endl;
 }
 
 Animal::Animal( Animal const & copy ) {
@@ -37,7 +37,10 @@ Animal &	Animal::operator=( Animal const & rhs ) {
 	return *this;
 }
 
-Animal::~Animal( void ) {}
+Animal::~Animal( void ) {
+
+	std::cout << "Animal (" << type << ") dies, press F to pay respects" << std::endl;
+}
 
 void	Animal::makeSound( void ) const {
 

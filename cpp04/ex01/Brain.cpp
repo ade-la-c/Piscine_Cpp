@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:13:13 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 15:14:19 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:26:01 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ Brain::Brain( Brain const & copy ) {
 
 Brain &	Brain::operator=( Brain const & rhs ) {
 
-	if (this != &rhs)
-		this->_ideas = rhs._ideas;
+	if (this != &rhs) {}
 	return *this;
 }
 
