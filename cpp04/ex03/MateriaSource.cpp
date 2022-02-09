@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/09 17:34:41 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/09 17:46:25 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#include "MateriaSource.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+MateriaSource::MateriaSource( void ) {}
 
-class	Cat : public Animal {
+MateriaSource::MateriaSource( MateriaSource const & copy ) {
 
+	*this = copy;
+}
 
-public:
+MateriaSource &	MateriaSource::operator=( MateriaSource const & rhs ) {
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	if (this != &rhs) {}
+	return *this;
+}
 
-	void	makeSound( void ) const;
-
-
-private:
-
-	Brain *		_brain;
-};
-
-#endif
+MateriaSource::~MateriaSource( void ) {}

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/09 17:59:10 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/09 18:59:55 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef ICE_H
+# define ICE_H
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class	Cat : public Animal {
+class Ice : public AMateria {
 
 
 public:
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	Ice( void );
+	Ice( std::string const & type );
+	Ice( Ice const & copy );
+	Ice &	operator=( Ice const & rhs );
+	~Ice( void );
 
-	void	makeSound( void ) const;
+	std::string const &		getType( void ) const;
 
+	AMateria *				clone( void ) const = 0;
+	void					use( ICharacter & target );
 
-private:
-
-	Brain *		_brain;
 };
 
 #endif

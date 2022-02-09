@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:16:41 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class	Cat : public Animal {
+class	Cat : public AAnimal {
 
 
 public:

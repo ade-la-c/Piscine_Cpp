@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 20:10:24 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 01:08:17 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef WRONGCAT_H
+# define WRONGCAT_H
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "WrongAnimal.hpp"
 
-class	Cat : public Animal {
+class	WrongCat : public virtual WrongAnimal {
 
 
 public:
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	WrongCat( void );
+	WrongCat( WrongCat const & copy );
+	WrongCat &	operator=( WrongCat const & rhs );
+	~WrongCat( void );
 
 	void	makeSound( void ) const;
 
-
-private:
-
-	Brain *		_brain;
 };
 
 #endif

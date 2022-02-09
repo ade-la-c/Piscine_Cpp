@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/08 13:13:13 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 18:26:01 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#include "Brain.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+Brain::Brain( void ) {
 
-class	Cat : public Animal {
+	std::cout << "Brain constructs itself" << std::endl;
+}
 
+Brain::Brain( Brain const & copy ) {
 
-public:
+	std::cout << "Copy brain constructs itself" << std::endl;
+	*this = copy;
+}
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+Brain &	Brain::operator=( Brain const & rhs ) {
 
-	void	makeSound( void ) const;
+	if (this != &rhs) {}
+	return *this;
+}
 
+Brain::~Brain( void ) {
 
-private:
-
-	Brain *		_brain;
-};
-
-#endif
+	std::cout << "Brain disintegrates" << std::endl;
+}

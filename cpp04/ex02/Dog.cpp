@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:17:04 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:19 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:28:26 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ) : Animal("Dog") {
+Dog::Dog( void ) : AAnimal("Dog") {
 
 	std::cout << "Dog constructor called" << std::endl;
 	this->_brain = new Brain();

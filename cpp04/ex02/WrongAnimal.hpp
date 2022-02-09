@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 20:11:38 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 01:07:05 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
 
-class	Cat : public Animal {
+class	WrongAnimal {
 
 
 public:
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	WrongAnimal( void );
+	WrongAnimal( std::string type );
+	WrongAnimal( WrongAnimal const & copy );
+	WrongAnimal &	operator=( WrongAnimal const & rhs );
+	~WrongAnimal( void );
 
-	void	makeSound( void ) const;
+	void			makeSound( void ) const;
+
+	std::string		getType( void ) const;
 
 
-private:
+protected:
 
-	Brain *		_brain;
+	std::string		type;
+
 };
 
 #endif

@@ -1,49 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:17:04 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:19 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 18:25:21 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/09 15:25:09 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog( void ) : Animal("Dog") {
+Cat::Cat( void ) : AAnimal("Cat") {
 
-	std::cout << "Dog constructor called" << std::endl;
+	std::cout << "Cat constructor called" << std::endl;
 	this->_brain = new Brain();
-	// this->_brain.operator=(new Brain());
 }
 
-Dog::Dog( Dog const & copy ) {
+Cat::Cat( Cat const & copy ) {
 
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Dog &	Dog::operator=( Dog const & rhs ) {
+Cat &	Cat::operator=( Cat const & rhs ) {
 
 	if (this != &rhs)
 		this->type = rhs.type;
 	return *this;
 }
 
-Dog::~Dog( void ) {
+Cat::~Cat( void ) {
 
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 	delete _brain;
 }
 
-void	Dog::makeSound( void ) const {
+void	Cat::makeSound( void ) const {
 
-	std::cout << "Ouaf ouaf je suis le chien tsais" << std::endl;
+	std::cout << "Miaou miaou mon reuf" << std::endl;
 }
 
-// std::string		Dog::getType( void ) const {
+// std::string		Cat::getType( void ) const {
 
 // 	return this->type;
 // }

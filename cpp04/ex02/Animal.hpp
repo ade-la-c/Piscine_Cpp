@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 18:04:29 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/09 15:14:18 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef ANIMAL_H
+# define ANIMAL_H
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
 
-class	Cat : public Animal {
+class	AAnimal {
 
 
 public:
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	AAnimal( void );
+	AAnimal( std::string type );
+	AAnimal( AAnimal const & copy );
+	AAnimal &	operator=( AAnimal const & rhs );
+	virtual ~AAnimal( void );
 
-	void	makeSound( void ) const;
+	virtual void	makeSound( void ) const = 0;
+
+	std::string		getType( void ) const;
 
 
-private:
+protected:
 
-	Brain *		_brain;
+	std::string		type;
+
 };
 
 #endif

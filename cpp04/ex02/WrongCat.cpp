@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 20:10:02 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/08 01:03:35 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#include "WrongCat.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+WrongCat::WrongCat( void ) : WrongAnimal("wrong_cat") {}
 
-class	Cat : public Animal {
+WrongCat::WrongCat( WrongCat const & copy ) {
 
+	*this = copy;
+}
 
-public:
+WrongCat &	WrongCat::operator=( WrongCat const & rhs ) {
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	if (this != &rhs)
+		this->type = rhs.type;
+	return *this;
+}
 
-	void	makeSound( void ) const;
+WrongCat::~WrongCat( void ) {}
 
+void	WrongCat::makeSound( void ) const {
 
-private:
-
-	Brain *		_brain;
-};
-
-#endif
+	std::cout << "wrong Miaou miaou mon reuf" << std::endl;
+}

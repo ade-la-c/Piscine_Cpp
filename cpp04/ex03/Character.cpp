@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/09 17:49:59 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/09 17:52:38 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#include "Character.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+Character::Character( void ) {}
 
-class	Cat : public Animal {
+Character::Character( Character const & copy ) {
 
+	*this = copy;
+}
 
-public:
+Character &	Character::operator=( Character const & rhs ) {
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	if (this != &rhs) {}
+	return *this;
+}
 
-	void	makeSound( void ) const;
-
-
-private:
-
-	Brain *		_brain;
-};
-
-#endif
+Character::~Character( void ) {}

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 18:20:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:17:06 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/07 18:17:25 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/09 15:16:48 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef DOG_H
+# define DOG_H
 
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class	Cat : public Animal {
+class	Dog : public AAnimal {
 
 
 public:
 
-	Cat( void );
-	Cat( Cat const & copy );
-	Cat &	operator=( Cat const & rhs );
-	~Cat( void );
+	Dog( void );
+	Dog( Dog const & copy );
+	Dog &	operator=( Dog const & rhs );
+	~Dog( void );
 
 	void	makeSound( void ) const;
 
@@ -32,6 +32,7 @@ public:
 private:
 
 	Brain *		_brain;
+
 };
 
 #endif
