@@ -6,11 +6,14 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:38:04 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 18:06:20 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/11 20:44:44 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include "Character.hpp"
+#include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
@@ -33,6 +36,8 @@ int main()
 
 	me->use(0, *bob);
 	me->use(1, *bob);
+
+	// me->unequip(0);
 
 	delete bob;
 	delete me;

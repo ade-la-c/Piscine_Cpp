@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:50:11 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 18:16:07 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/11 20:32:28 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	Character : public ICharacter {
 public:
 
 	Character( void );
+	Character( std::string name );
 	Character( Character const & copy );
 	Character &	operator=( Character const & rhs );
 	~Character( void );
@@ -33,7 +34,9 @@ public:
 
 private:
 
+	std::string const		_name;
 
+	AMateria *		_inventory[4];
 
 };
 

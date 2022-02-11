@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:34:57 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 17:48:45 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/11 20:47:11 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define MATERIASOURCE_H
 
 # include "IMateriaSource.hpp"
+# include "AMateria.hpp"
+# include <iostream>
 
 class	MateriaSource : public IMateriaSource {
 
@@ -30,7 +32,7 @@ public:
 
 private:
 
-
+	AMateria *		_materias[4];
 
 };
 

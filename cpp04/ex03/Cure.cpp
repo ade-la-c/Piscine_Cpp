@@ -6,17 +6,15 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:01:37 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 18:59:11 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/11 21:01:38 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure( void ) {}
+Cure::Cure( void ) : AMateria("cure") {}
 
-Cure::Cure( std::string const & type ) {}
-
-Cure::Cure( Cure const & copy ) {
+Cure::Cure( Cure const & copy ) : AMateria(copy.type) {
 
 	*this = copy;
 }
@@ -29,11 +27,17 @@ Cure &	Cure::operator=( Cure const & rhs ) {
 
 Cure::~Cure( void ) {}
 
-std::string const &		Cure::getType( void ) const {}
+std::string const &		Cure::getType( void ) const {
 
-AMateria *			Cure::clone( void ) const {}
+	return this->type;
+}
+
+AMateria *			Cure::clone( void ) const {
+
+	return new Cure;
+}
 
 void			Cure::use( ICharacter & target ) {
 
-	std::cout << "* heals " << this->type << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

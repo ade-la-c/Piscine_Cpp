@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 16:21:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 16:27:14 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/11 20:25:44 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define ICHARACTER_H
 
 # include "AMateria.hpp"
+# include <iostream>
+
+class	AMateria;
 
 class	ICharacter {
 

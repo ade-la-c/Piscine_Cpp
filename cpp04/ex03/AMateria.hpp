@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:39:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 18:47:38 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/11 21:02:38 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,26 @@
 # include "ICharacter.hpp"
 # include <iostream>
 
+class	ICharacter;
+
 class	AMateria {
 
 
 public:
 
-	AMateria( void );
+	// AMateria( void ) {}
 	AMateria( std::string const & type );
+	virtual ~AMateria( void ) {}
 
 	std::string const &		getType( void ) const; // returns the materia type
 
 	virtual AMateria *		clone( void ) const = 0;
-	virtual void			use( ICharacter & target );
+	virtual void			use( ICharacter & target ) = 0;
 
 
 protected:
 
 	std::string		type;
-	ICharacter &	target;
 
 };
 
