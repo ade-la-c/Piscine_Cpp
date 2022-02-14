@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:34:41 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/14 14:44:50 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:35:57 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,13 @@ MateriaSource &	MateriaSource::operator=( MateriaSource const & rhs ) {
 	return *this;
 }
 
-MateriaSource::~MateriaSource( void ) {}
+MateriaSource::~MateriaSource( void ) {
+
+	for (int i = 0; i < 4; i++) {
+		if (this->_materias[i] != NULL)
+			delete this->_materias[i];
+	}
+}
 
 void			MateriaSource::learnMateria( AMateria * materia ) {
 

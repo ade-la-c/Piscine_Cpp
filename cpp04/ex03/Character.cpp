@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:49:59 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/14 14:38:11 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:26:39 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ Character &	Character::operator=( Character const & rhs ) {
 
 Character::~Character( void ) {
 
-	for (int i = 0; i < 4; i++)
-		if (this->_inventory[i] != NULL) {}
-			// delete this->_inventory[i];
+	for (int i = 0; i < 4; i++) {
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+	}
 }
 
 std::string const &		Character::getName( void ) const {
@@ -62,7 +63,6 @@ void		Character::equip( AMateria * m ) {
 		if (this->_inventory[i] == NULL)
 			this->_inventory[i] = m;
 	}
-		// this->_inventory[i] == NULL ? this->_inventory[i] = m : 0;
 }
 
 void		Character::unequip( int idx ) {

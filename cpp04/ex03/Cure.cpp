@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:01:37 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/14 13:36:41 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:32:15 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Cure::Cure( Cure const & copy ) : AMateria(copy.type) {
 
 Cure &	Cure::operator=( Cure const & rhs ) {
 
-	if (this != &rhs) {}
+	if (this != &rhs)
+		this->type = "cure";
 	return *this;
 }
 
@@ -34,7 +35,7 @@ std::string const &		Cure::getType( void ) const {
 
 AMateria *			Cure::clone( void ) const {
 
-	return new Cure;
+	return new Cure();
 }
 
 void			Cure::use( ICharacter & target ) {

@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:59:10 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/11 20:43:22 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:34:41 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "AMateria.hpp"
 
-class Ice : public AMateria {
+class Ice : virtual public AMateria {
 
 
 public:

@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:01:11 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/11 18:44:17 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:34:28 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "AMateria.hpp"
 
-class Cure : public AMateria {
+class Cure : virtual public AMateria {
 
 
 public:

@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:58:14 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/14 14:16:23 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:32:12 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Ice::Ice( Ice const & copy ) : AMateria(copy.type) {
 
 Ice &	Ice::operator=( Ice const & rhs ) {
 
-	if (this != &rhs) {}
+	if (this != &rhs)
+		this->type = "ice";
 	return *this;
 }
 
@@ -34,7 +35,7 @@ std::string const &		Ice::getType( void ) const {
 
 AMateria *			Ice::clone( void ) const {
 
-	return new Ice;
+	return new Ice();
 }
 
 void			Ice::use( ICharacter & target ) {
