@@ -6,15 +6,23 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:49:59 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/11 20:49:30 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:38:11 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character( void ) {}
+Character::Character( void ) : _name("") {
 
-Character::Character( std::string name ) : _name(name) {}
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
+}
+
+Character::Character( std::string name ) : _name(name) {
+
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
+}
 
 Character::Character( Character const & copy ) {
 
@@ -23,19 +31,24 @@ Character::Character( Character const & copy ) {
 
 Character &	Character::operator=( Character const & rhs ) {
 
-	if (this != &rhs) {
-		for (int i = 0; i < 4; i++)
-			this->_inventory[i] = rhs._inventory[i];
-		// this->_name = rhs.getName();
+	if (this == &rhs)
+		return *this;
+
+	for (int i = 0; i < 4; i++) {
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 	}
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = rhs._inventory[i]->clone();
+
 	return *this;
 }
 
 Character::~Character( void ) {
 
 	for (int i = 0; i < 4; i++)
-		if (this->_inventory[i])
-			delete this->_inventory[i];
+		if (this->_inventory[i] != NULL) {}
+			// delete this->_inventory[i];
 }
 
 std::string const &		Character::getName( void ) const {
@@ -45,8 +58,11 @@ std::string const &		Character::getName( void ) const {
 
 void		Character::equip( AMateria * m ) {
 
-	for (int i = 0; i < 4; i++)
-		this->_inventory[i] == NULL ? this->_inventory[i] = m : 0;
+	for (int i = 0; i < 4; i++) {
+		if (this->_inventory[i] == NULL)
+			this->_inventory[i] = m;
+	}
+		// this->_inventory[i] == NULL ? this->_inventory[i] = m : 0;
 }
 
 void		Character::unequip( int idx ) {
@@ -61,5 +77,7 @@ void		Character::unequip( int idx ) {
 
 void		Character::use( int idx, ICharacter & target ) {
 
-	this->_inventory[idx]->use(target);
+	if (this->_inventory[idx] != NULL && idx < 4) {}
+		this->_inventory[idx]->use(target);
+	std::cout << this->_inventory[idx]->getType() << std::endl;
 }

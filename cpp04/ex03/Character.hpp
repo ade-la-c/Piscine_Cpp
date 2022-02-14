@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:50:11 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/11 20:32:28 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:04:48 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Character( std::string name );
 	Character( Character const & copy );
 	Character &	operator=( Character const & rhs );
-	~Character( void );
+	virtual ~Character( void );
 
 	std::string const &		getName( void ) const;
 	void					equip( AMateria * m );
@@ -34,7 +34,7 @@ public:
 
 private:
 
-	std::string const		_name;
+	std::string		_name;
 
 	AMateria *		_inventory[4];
 

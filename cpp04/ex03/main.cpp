@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:38:04 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/11 20:44:44 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:40:26 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
-	// me->unequip(0);
-
 	delete bob;
 	delete me;
 	delete src;
+
+	system("leaks materia");
 
 	return 0;
 }
