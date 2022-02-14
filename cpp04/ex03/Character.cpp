@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:49:59 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/14 15:26:39 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:03:52 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,7 @@ Character &	Character::operator=( Character const & rhs ) {
 	return *this;
 }
 
-Character::~Character( void ) {
-
-	for (int i = 0; i < 4; i++) {
-		if (this->_inventory[i] != NULL)
-			delete this->_inventory[i];
-	}
-}
+Character::~Character( void ) {}
 
 std::string const &		Character::getName( void ) const {
 
@@ -60,8 +54,10 @@ std::string const &		Character::getName( void ) const {
 void		Character::equip( AMateria * m ) {
 
 	for (int i = 0; i < 4; i++) {
-		if (this->_inventory[i] == NULL)
+		if (this->_inventory[i] == NULL) {
 			this->_inventory[i] = m;
+			return;
+		}
 	}
 }
 
@@ -77,7 +73,7 @@ void		Character::unequip( int idx ) {
 
 void		Character::use( int idx, ICharacter & target ) {
 
-	if (this->_inventory[idx] != NULL && idx < 4) {}
-		this->_inventory[idx]->use(target);
-	std::cout << this->_inventory[idx]->getType() << std::endl;
+	if (idx > 4 || this->_inventory[idx] == NULL)
+		return;
+	this->_inventory[idx]->use(target);
 }
