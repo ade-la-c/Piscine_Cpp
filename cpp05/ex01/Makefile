@@ -6,7 +6,7 @@
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 17:15:53 by ade-la-c          #+#    #+#              #
-#    Updated: 2022/02/15 15:31:39 by ade-la-c         ###   ########.fr        #
+#    Updated: 2022/02/15 17:02:47 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS				= ${SRCS:.cpp=.o}
 
 CXX					= clang++
 
-CXXFLAGS			= -Wall -Werror -Wextra -std=c++98 -I . #-fsanitize=address
+CXXFLAGS			= -Wall -Werror -Wextra -std=c++98 -I . #-fsanitize=address -g
 
 RM					= rm -f
 

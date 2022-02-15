@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:13:13 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 18:26:01 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/15 19:14:44 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Brain::Brain( Brain const & copy ) {
 
 Brain &	Brain::operator=( Brain const & rhs ) {
 
-	if (this != &rhs) {}
+	if (this != &rhs) {
+		for (size_t i = 0; i < rhs._ideas->length(); i++)
+			this->_ideas[i] = rhs._ideas[i];
+	}
 	return *this;
 }
 

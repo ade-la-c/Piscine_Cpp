@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:04:05 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/08 19:09:57 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/15 19:26:24 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@
 
 int		main( void )
 {
+
+	// Dog dog;
+	// {
+	// 	Dog tmp = dog;
+	// }
+
 	{
-		int				x = 2;
+		int				x = 1;
 		const Animal*	a[x];
 
 		for (int i = 0; i < x; i++) {
@@ -37,7 +43,7 @@ int		main( void )
 			delete a[i];
 		}
 	}
-	{	// ex01 default main
+	{
 		// const Animal* j = new Dog();
 		// const Animal* i = new Cat();
 
@@ -68,5 +74,8 @@ int		main( void )
 		// k->makeSound(); //will not output the cat sound!
 		// meta2->makeSound();
 	}
+
+	// system("leaks animal");
+
 	return 0;
 }
