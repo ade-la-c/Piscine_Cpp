@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 17:18:47 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/15 13:45:48 by ade-la-c         ###   ########.fr       */
+/*   Created: 2022/02/15 14:21:53 by ade-la-c          #+#    #+#             */
+/*   Updated: 2022/02/15 15:01:54 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#ifndef FORM_H
+# define FORM_H
 
+# include "Bureaucrat.hpp"
 # include <iostream>
 
-class	Bureaucrat {
+class	Bureaucrat;
+
+class	Form {
 
 
 public:
 
-	Bureaucrat( void );
-	Bureaucrat( std::string name, int grade );
-	Bureaucrat( Bureaucrat const & copy );
-	Bureaucrat &	operator=( Bureaucrat const & rhs );
-	~Bureaucrat( void );
+	Form( void );
+	Form( std::string name, int gradeToSign, int gradeToExecute );
+	Form( Form const & copy );
+	Form &	operator=( Form const & rhs );
+	~Form( void );
 
-	void			increment( void );
-	void			decrement( void );
+	void	beSigned( Bureaucrat const & bureaucrat );
 
-	std::string			getName( void ) const;
-	int					getGrade( void ) const;
+	std::string		getName( void ) const;
+	int				getGradeToSign( void ) const;
+	int				getGradeToExecute( void ) const;
 
 	class	GradeTooHighException : public std::exception {
 
@@ -44,14 +47,16 @@ public:
 		const char * what() const throw();
 	};
 
+
 private:
 
 	std::string const	_name;
-
-	int		_grade;
+	bool				_singed;
+	int					_gradeToSign;
+	int					_gradeToExecute;
 
 };
 
-std::ostream &	operator<<( std::ostream & COUT, Bureaucrat const & rhs );
+std::ostream &	operator<<( std::ostream & COUT, Form const & rhs );
 
 #endif

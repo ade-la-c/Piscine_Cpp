@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:18:47 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/15 13:45:48 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/15 15:20:33 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BUREAUCRAT_H
 
 # include <iostream>
+# include "Form.hpp"
+
+class	Form;
 
 class	Bureaucrat {
 
@@ -26,6 +29,7 @@ public:
 	Bureaucrat &	operator=( Bureaucrat const & rhs );
 	~Bureaucrat( void );
 
+	void			signForm( Form & form );
 	void			increment( void );
 	void			decrement( void );
 

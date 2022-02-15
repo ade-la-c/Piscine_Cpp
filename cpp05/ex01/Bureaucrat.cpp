@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:21:00 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/15 14:10:57 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/15 15:33:21 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ Bureaucrat &	Bureaucrat::operator=( Bureaucrat const & rhs ) {
 
 Bureaucrat::~Bureaucrat( void ) {}
 
+void	Bureaucrat::signForm( Form & form ) {
+
+	// if (this->_grade > form.getGradeToSign()) {
+	// 	std::cout << this->_name << " couldn't sign " << form.getName();
+	// 	std::cout << " because ";
+	// 	throw GradeTooLowException();
+	// }
+	form.beSigned(*this);
+	std::cout << this->_name << " signed " << form.getName() << std::endl;
+}
+
 void	Bureaucrat::increment( void ) {
 
 	if ( this->_grade == 1)
@@ -64,12 +75,12 @@ int					Bureaucrat::getGrade( void ) const {
 	return this->_grade;
 }
 
-const char *	Bureaucrat::GradeTooHighException::what( void ) const throw() {
+const char *		Bureaucrat::GradeTooHighException::what( void ) const throw() {
 
 	return "The grade is too high, grade must be between 1 and 150\n";
 }
 
-const char *	Bureaucrat::GradeTooLowException::what( void ) const throw() {
+const char *		Bureaucrat::GradeTooLowException::what( void ) const throw() {
 
 	return "The grade is too low, grade must be between 1 and 150\n";
 }
