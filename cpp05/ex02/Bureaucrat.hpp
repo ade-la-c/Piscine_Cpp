@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:18:47 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 14:27:43 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:18:19 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ public:
 	~Bureaucrat( void );
 
 	void			signForm( Form & form );
+	void			executeForm( Form const & form ) const;
+
 	void			increment( void );
 	void			decrement( void );
 

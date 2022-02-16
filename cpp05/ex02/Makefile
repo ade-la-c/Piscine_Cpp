@@ -6,15 +6,18 @@
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 17:15:53 by ade-la-c          #+#    #+#              #
-#    Updated: 2022/02/16 13:51:10 by ade-la-c         ###   ########.fr        #
+#    Updated: 2022/02/16 14:21:56 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= bureaucrat
 
-SRCS				= main.cpp			\
-					Bureaucrat.cpp		\
-					Form.cpp			\
+SRCS				= main.cpp						\
+					Bureaucrat.cpp					\
+					Form.cpp						\
+					ShrubberyCreationForm.cpp		\
+					RobotomyRequestForm.cpp			\
+					PresidentialPardonForm.cpp		\
 
 OBJS				= ${SRCS:.cpp=.o}
 

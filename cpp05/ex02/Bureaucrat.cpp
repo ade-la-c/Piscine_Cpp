@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:21:00 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 14:13:02 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:57:19 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ Bureaucrat::Bureaucrat( Bureaucrat const & copy ) {
 
 Bureaucrat &	Bureaucrat::operator=( Bureaucrat const & rhs ) {
 
-	if (this != &rhs) {}
-
+	if (this != &rhs)
+		this->_grade = rhs._grade;
 	return *this;
 }
 
@@ -42,6 +42,12 @@ void	Bureaucrat::signForm( Form & form ) {
 
 	form.beSigned(*this);
 	std::cout << this->_name << " signed " << form.getName() << ".\n" << std::endl;
+}
+
+void	Bureaucrat::executeForm( Form const & form ) const {
+
+	form.execute(*this);
+	std::cout << this->_name << " executed " << form.getName() << ".\n" << std::endl;
 }
 
 void	Bureaucrat::increment( void ) {

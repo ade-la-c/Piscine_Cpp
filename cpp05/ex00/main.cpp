@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:21:28 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/15 15:26:24 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:50:57 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ int		main( void ) {
 	} catch (std::exception & e) {
 		std::cerr << "Titouan exception : " << e.what() << std::endl;
 	}
+
+	// system("leaks bureaucrat");
+
 	return 0;
 }

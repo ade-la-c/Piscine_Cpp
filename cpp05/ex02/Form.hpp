@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:21:53 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 14:27:48 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:40:20 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,16 @@ public:
 	Form( std::string name, int gradeToSign, int gradeToExecute );
 	Form( Form const & copy );
 	Form &	operator=( Form const & rhs );
-	~Form( void );
+	virtual ~Form( void );
 
-	void	beSigned( Bureaucrat const & bureaucrat );
+	void			beSigned( Bureaucrat const & bureaucrat );
+
+	virtual void	execute( Bureaucrat const & executor ) const = 0;
 
 	std::string		getName( void ) const;
 	int				getGradeToSign( void ) const;
 	int				getGradeToExecute( void ) const;
+	bool			getSignedStatus( void ) const;
 
 	class	GradeTooHighException : public std::exception {
 
@@ -50,6 +53,12 @@ public:
 	class	AlreadySignedException : public std::exception {
 
 	public: 
+		const char * what() const throw();
+	};
+
+	class	NotSignedException : public std::exception {
+
+	public:
 		const char * what() const throw();
 	};
 
