@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:04:05 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:29:52 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:36:33 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,8 @@ int		main( void )
 		// k->makeSound(); //will not output the cat sound!
 		// meta2->makeSound();
 	}
+
+	system("leaks animal");
+
 	return 0;
 }

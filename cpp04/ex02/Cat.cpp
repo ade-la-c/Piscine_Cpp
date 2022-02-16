@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:25:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/09 15:25:09 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:34:42 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ Cat::Cat( Cat const & copy ) {
 
 Cat &	Cat::operator=( Cat const & rhs ) {
 
-	if (this != &rhs)
+	if (this != &rhs) {
 		this->type = rhs.type;
+		delete this->_brain;
+		this->_brain = new Brain(*rhs._brain);
+	}
 	return *this;
 }
 

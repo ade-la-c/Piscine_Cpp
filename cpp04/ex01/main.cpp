@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:04:05 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/15 19:26:24 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:31:59 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		main( void )
 	// }
 
 	{
-		int				x = 1;
+		int				x = 6;
 		const Animal*	a[x];
 
 		for (int i = 0; i < x; i++) {
@@ -43,6 +43,7 @@ int		main( void )
 			delete a[i];
 		}
 	}
+
 	{
 		// const Animal* j = new Dog();
 		// const Animal* i = new Cat();
