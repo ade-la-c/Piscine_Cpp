@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:38:04 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/14 17:01:49 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/17 13:34:28 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ int main()
 	ICharacter* me = new Character("me");
 
 	AMateria* tmp;
+	AMateria* tmp2;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	tmp2 = src->createMateria("cure");
+	me->equip(tmp2);
+
 
 	ICharacter* bob = new Character("bob");
 
@@ -40,6 +42,8 @@ int main()
 	delete src;
 	delete bob;
 	delete me;
+	delete tmp;
+	delete tmp2;
 
 	// system("leaks materia");
 
