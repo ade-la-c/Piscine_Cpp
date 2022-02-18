@@ -6,18 +6,20 @@
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:08:44 by ade-la-c          #+#    #+#              #
-#    Updated: 2022/02/17 19:31:36 by ade-la-c         ###   ########.fr        #
+#    Updated: 2022/02/18 19:40:23 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				= a.out
+NAME				= convert
 
-SRCS				= \
+SRCS				= main.cpp			\
+					# ScalarType.cpp		\
 
 OBJS				= ${SRCS:.cpp=.o}
 
 CXX					= c++
 
+# CXXFLAGS			= -Wall -Werror -Wextra -Wno-unused-parameter -std=c++98 -I .
 CXXFLAGS			= -Wall -Werror -Wextra -std=c++98 -I .
 
 all:				${NAME}
