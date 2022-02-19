@@ -6,54 +6,94 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:11:25 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/18 19:55:08 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:24:08 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
+#include <iomanip>
+#include <climits>
 
 std::string		g_str;
-typedef void	(*fct)(int);
+typedef void	(*fct)(double);
 
-bool	particularCase( std::string s ) {
+double	particularCase( std::string s ) {
 
-	if (s == "-inff" || s == "+inff" || s == "nanf" || s == "-inf"
-	|| s == "+inf" || s == "nan")
-		return true;
-	return false;
+	if (s == "+inff") {
+		g_str = "float";
+		return INFINITY;
+	} if (s == "-inff") {
+		g_str = "float";
+		return -INFINITY;
+	} if (s == "nanf") {
+		g_str = "float";
+		return NAN;
+	} if (s == "+inf") {
+		g_str = "double";
+		return INFINITY;
+	} if (s == "-inf") {
+		g_str = "double";
+		return -INFINITY;
+	} if (s == "nan") {
+		g_str = "double";
+		return NAN;
+	}
+	return 0;
 }
 
-void		charType( int value ) {
+void		charType( double value ) {
 
 	char	c = static_cast<char>(value);
 
+	std::cout << "char: ";
 	if (value >= ' ' && value <= '~')
-		std::cout << "char: '" << c << "'" << std::endl;
-	else if (particularCase())
+		std::cout << "'" << c << "'" << std::endl;
+	else if (value >= -128 && value <= 127)
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << "impossible" << std::endl;
 }
 
-void		intType( int value ) {
+void		intType( double value ) {
 
-	std::cout << "int: " << value << std::endl;
+	int		num = static_cast<int>(value);
+
+	std::cout << "int: ";
+	if (value > INT32_MAX || value < INT32_MIN) {
+		std::cout << "impossible" << std::endl;
+		return;
+	}
+	std::cout << num << std::endl;
 }
 
-void		floatType( int value ) {
+void		floatType( double value ) {
 
 	float	floatvalue = static_cast<float>(value);
 
-	std::cout << "float: " << floatvalue << std::endl;	// gerer cas particuliers alphabétiques
+	std::cout << "float: ";
+	if (floatvalue == HUGE_VAL || floatvalue == -HUGE_VAL) {
+		std::cout << "impossible" << std::endl;
+		return;
+	}
+	std::cout << std::fixed << std::setprecision(1) << floatvalue;
+	std::cout << 'f' << std::endl;
 }
 
-void		doubleType( int value ) {
+void		doubleType( double value ) {
 
 	double	dvalue = static_cast<double>(value);
 
-	std::cout << "double: " << dvalue << std::endl;	// gerer cas particuliers alphabétiques
+	std::cout << "double: ";
+	if (dvalue == HUGE_VAL || dvalue == -HUGE_VAL) {
+		std::cout << "impossible" << std::endl;
+		return;
+	}
+	std::cout << dvalue << std::endl;
 }
 
-int		parsing( std::string s ) {
+double		parsing( std::string s ) {
 
 	if (s.length() == 1 && ((s[0] >= 32 && s[0] <= 47) || (s[0] >= 58 && s[0] <= 126))) {
 		g_str = "char";
@@ -64,8 +104,7 @@ int		parsing( std::string s ) {
 	bool	sign = false;
 
 	if (s == "-inff" || s == "+inff" || s == "nanf" || s == "-inf" || s == "+inf" || s == "nan") {
-		g_str = s;
-		return 0;
+		return particularCase(s);
 	}
 
 	if (s[i] == '-' || s[i] == '+') {
@@ -81,7 +120,7 @@ int		parsing( std::string s ) {
 
 	if (i == std::string::npos) {
 		g_str = "int";
-		return atoi(s.c_str());
+		return atof(s.c_str());
 	}
 
 	if (((i == 1 && sign == true) || (i == 0 && sign == false)) && s[i] != '.') {
@@ -99,7 +138,7 @@ int		parsing( std::string s ) {
 
 		if (i == std::string::npos) {
 			g_str = "double";
-			return atof(s.c_str());	// pas sur
+			return atof(s.c_str());
 		}
 	}
 	g_str = "error";
@@ -109,8 +148,8 @@ int		parsing( std::string s ) {
 int		main( int ac, char **av ) {
 
 	std::string		str;
-	int				value;
-	
+	double			value;
+
 	if (ac != 2) {
 		std::cerr << "Error : program takes one string parameter" << std::endl;
 		return 1;

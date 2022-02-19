@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/17 19:08:44 by ade-la-c          #+#    #+#              #
-#    Updated: 2022/02/19 20:25:09 by ade-la-c         ###   ########.fr        #
+#    Created: 2022/02/19 20:24:54 by ade-la-c          #+#    #+#              #
+#    Updated: 2022/02/19 20:31:27 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= convert
 
 SRCS				= main.cpp			\
+					Data.cpp			\
 
 OBJS				= ${SRCS:.cpp=.o}
 
