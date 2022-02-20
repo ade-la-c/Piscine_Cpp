@@ -6,14 +6,16 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:43:20 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 15:22:14 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 15:03:48 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_H
 # define ROBOTOMYREQUESTFORM_H
 
-#include "Form.hpp"
+# include "Form.hpp"
+# include <cstdlib>
+# include <ctime>
 
 class	RobotomyRequestForm : public virtual Form {
 

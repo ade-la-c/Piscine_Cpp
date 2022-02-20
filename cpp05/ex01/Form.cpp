@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:26:54 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 15:48:47 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 14:44:15 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form( void ) : _name(""), _signed(false) {}
+Form::Form( void ) : _name(""), _signed(false), _gradeToSign(150), _gradeToExecute(150) {}
 
 Form::Form( std::string name, int gradeToSign, int gradeToExecute ) : _name(name), _signed(false) {
 
@@ -26,15 +26,16 @@ Form::Form( std::string name, int gradeToSign, int gradeToExecute ) : _name(name
 	}
 }
 
-Form::Form( Form const & copy ) {
+Form::Form( Form const & copy )
+: _name(copy._name), _gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute) {
 
 	*this = copy;
 }
 
 Form &	Form::operator=( Form const & rhs ) {
 
-	if (this != &rhs) {}
-
+	if (this != &rhs)
+		this->_signed = rhs._signed;
 	return *this;
 }
 
@@ -50,7 +51,7 @@ void			Form::beSigned( Bureaucrat const & bureaucrat ) {
 		throw GradeTooLowException();
 	}
 	this->_signed = true;
-	std::cout << this->_name << " has been signed by " << bureaucrat << "." << std::endl;
+	std::cout << this->_name << " has been signed by " << bureaucrat << std::endl;
 }
 
 std::string		Form::getName( void ) const {

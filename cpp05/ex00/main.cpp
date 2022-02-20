@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:21:28 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 13:50:57 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 14:36:47 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main( void ) {
 		std::cerr << "Sebstrick exception : " << e.what() << std::endl;
 	}
 	try {
-		Bureaucrat	Titouan = Bureaucrat("Titouan", 35);
+		Bureaucrat	Titouan = Bureaucrat("Titouan", 150);
 		std::cout << Titouan << std::endl;
 
 		Titouan.decrement();

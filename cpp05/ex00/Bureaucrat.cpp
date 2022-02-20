@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:21:00 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/15 14:10:57 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 14:37:10 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	Bureaucrat::increment( void ) {
 
 void	Bureaucrat::decrement( void ) {
 
-	if ( this->_grade == 1)
+	if ( this->_grade == 150)
 		throw GradeTooLowException();
 	this->_grade++;
 	std::cout << this->_name << " gets demoted to grade " << this->_grade << std::endl;

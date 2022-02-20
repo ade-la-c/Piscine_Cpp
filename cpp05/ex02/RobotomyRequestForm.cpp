@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:02:51 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/16 17:02:06 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 15:04:22 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ RobotomyRequestForm::~RobotomyRequestForm( void ) {}
 
 void		RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
 
+	srand(time(NULL));
+
 	if (this->getSignedStatus() == false) {
 		std::cout << executor.getName() << " couldn't execute " << this->getName() << " because ";
 		throw NotSignedException();
@@ -44,9 +46,11 @@ void		RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
 		throw GradeTooLowException();
 	}
 
-	if (rand() % 2 == 1) {
+	if (std::rand() % 2 == 0) {
 		std::cout << "* loud drilling noises *" << std::endl;
 		std::cout << this->_target << " has been robotomized.\n" << std::endl;
+	} else {
+		std::cout << "Robotomization error :(\n" << std::endl;
 	}
 
 }
