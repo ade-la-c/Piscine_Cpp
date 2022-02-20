@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 18:55:38 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/20 19:56:55 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:01:39 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void		identify( Base & p ) {
 		C &		c = dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
 	} catch ( std::bad_cast &bc ) {}
-
 }
 
 int			main( void ) {
@@ -72,6 +71,8 @@ int			main( void ) {
 	identify(ptr);
 	std::cout << "Ref identify : ";
 	identify(ref);
+
+	delete ptr;
 
 	return 0;
 }

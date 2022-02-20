@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:11:25 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/19 20:24:08 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:14:27 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 #include <climits>
 
 std::string		g_str;
+bool			g_bool = false;
 typedef void	(*fct)(double);
 
-double	particularCase( std::string s ) {
+double		particularCase( std::string s ) {
 
 	if (s == "+inff") {
 		g_str = "float";
@@ -61,7 +62,7 @@ void		intType( double value ) {
 	int		num = static_cast<int>(value);
 
 	std::cout << "int: ";
-	if (value > INT32_MAX || value < INT32_MIN) {
+	if (value >= INT32_MAX || value <= INT32_MIN || g_bool == true) {
 		std::cout << "impossible" << std::endl;
 		return;
 	}
@@ -73,7 +74,7 @@ void		floatType( double value ) {
 	float	floatvalue = static_cast<float>(value);
 
 	std::cout << "float: ";
-	if (floatvalue == HUGE_VAL || floatvalue == -HUGE_VAL) {
+	if ((floatvalue == HUGE_VAL || floatvalue == -HUGE_VAL) && g_bool == false) {
 		std::cout << "impossible" << std::endl;
 		return;
 	}
@@ -86,7 +87,7 @@ void		doubleType( double value ) {
 	double	dvalue = static_cast<double>(value);
 
 	std::cout << "double: ";
-	if (dvalue == HUGE_VAL || dvalue == -HUGE_VAL) {
+	if ((dvalue == HUGE_VAL || dvalue == -HUGE_VAL) && g_bool == false) {
 		std::cout << "impossible" << std::endl;
 		return;
 	}
@@ -104,6 +105,7 @@ double		parsing( std::string s ) {
 	bool	sign = false;
 
 	if (s == "-inff" || s == "+inff" || s == "nanf" || s == "-inf" || s == "+inf" || s == "nan") {
+		g_bool = true;
 		return particularCase(s);
 	}
 
