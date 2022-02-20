@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/19 20:24:54 by ade-la-c          #+#    #+#              #
-#    Updated: 2022/02/20 18:53:01 by ade-la-c         ###   ########.fr        #
+#    Created: 2022/02/20 18:52:21 by ade-la-c          #+#    #+#              #
+#    Updated: 2022/02/20 19:45:56 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS				= ${SRCS:.cpp=.o}
 
 CXX					= c++
 
-CXXFLAGS			= -Wall -Werror -Wextra -std=c++98 -I . \
+CXXFLAGS			= -Wall -Werror -Wextra -Wno-unused-variable -std=c++98 -I . \
 					#-g -fsanitize=address
 
 all:				${NAME}
