@@ -2,6 +2,7 @@
 #include <Array.hpp>
 
 #define MAX_VAL 750
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -10,7 +11,7 @@ int main(int, char**)
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
-        numbers[i] = value;
+        numbers[i] = value;			//for loop fills array w. random numbers
         mirror[i] = value;
     }
     //SCOPE
@@ -24,7 +25,7 @@ int main(int, char**)
         if (mirror[i] != numbers[i])
         {
             std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
+            return 1;		//for loop checks if operators work correctly
         }
     }
     try
