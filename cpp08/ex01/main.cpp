@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:21:44 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/22 18:52:05 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:43:20 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 	sp.addNumber(9);
 	sp.addNumber(11);
 
-	std::cout << "shortest : " << sp.shortestSpan() << std::endl;
-	std::cout << "longest : " << sp.longestSpan() << std::endl;
+	std::cout << "shortest span :\t" << sp.shortestSpan() << std::endl;
+	std::cout << "longest span :\t" << sp.longestSpan() << std::endl;
 
 	try {
 		Span	sp2(3);
@@ -31,15 +31,18 @@ int main()
 		sp2.addRange(4);
 
 	} catch ( const std::exception & e ) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 	try {
-		Span	sp3(1);
+		Span	sp3(100000);
 
-		sp3.addNumber(1);
-		sp3.shortestSpan();
+		sp3.addRange(100000);
+		std::cout << "100 000 numbers have been successfully added to vector" << std::endl;
+		std::cout << "shortest span :\t" << sp3.shortestSpan() << std::endl;
+		std::cout << "longest span :\t" << sp3.longestSpan() << std::endl;
+
 	} catch ( const std::exception & e ) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:21:16 by ade-la-c          #+#    #+#             */
-/*   Updated: 2022/02/22 18:47:37 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:36:09 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Span::addRange( unsigned int N ) {
 
 	srand(time(NULL));
 
-	for (int i = 0; i < N; i++) {
+	for (unsigned int i = 0; i < N; i++) {
 		addNumber(rand());
 	}
 }
